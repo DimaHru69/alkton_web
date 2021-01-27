@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex: 0 0 auto;
+}
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+// START LOGOBAR
+.logobar__inner {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+.nav__item-inner {
+  display: flex;
+  justify-content: space-between;
+}
+.item__box-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  .icon {
+    img {
+      height: 50px;
+      width: 50px;
+      margin-right: 16px;
+    }
+  }
+  .media {
+    text-align: left;
+    h1 {
+      font-size: 18px;
+    }
+    .media__box {
+      span {
+        a {
+          text-decoration: none;
+          color: #000;
+          list-style: none;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+// END LOGOBAR
