@@ -10,7 +10,7 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  // height: 100%;
 }
 .content {
   flex: 1 0 auto;
@@ -19,10 +19,13 @@ body {
   flex: 0 0 auto;
 }
 .container {
-  max-width: 1600px;
+  max-width: 1320px;
   margin: 0 auto;
 }
 // START LOGOBAR
+.logobar {
+  margin: 50px 0;
+}
 .logobar__inner {
   display: flex;
   justify-content: space-between;
@@ -64,3 +67,185 @@ body {
 }
 
 // END LOGOBAR
+
+//Start DROP DOWN MENU
+.header__nav-menu {
+  z-index: 10000;
+}
+p {
+  text-align: center;
+}
+
+nav {
+  background-color: #000;
+  z-index: 999999;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li {
+  display: inline-block;
+  background-color: #000;
+}
+
+nav a {
+  display: block;
+  padding: 0 34px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 60px;
+  text-decoration: none;
+}
+
+// nav a:hover {
+//   background-color: #000000;
+// }
+
+/* Hide Dropdowns by Default */
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 60px; /* the height of the main nav */
+  border-top: 3px #ffcd00 solid;
+}
+nav ul li li a {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+  display: inherit;
+}
+
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+  // width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+
+/* Second, Third and more Tiers	*/
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  left: 170px;
+}
+
+/* Change this in order to change the Dropdown symbol */
+li > a:after {
+  content: " +";
+}
+li > a:only-child:after {
+  content: "";
+}
+
+//End DROP DOWN MENU
+
+//Start SLIDER
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 700px;
+  width: 100%;
+  z-index: -1;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+.slide .content {
+  position: absolute;
+  bottom: 400px;
+  left: -300px;
+  opacity: 0;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  padding: 35px;
+}
+
+.slide .content h1 {
+  margin-bottom: 10px;
+}
+
+.slide.current .content {
+  opacity: 1;
+  transform: translateX(600px);
+  transition: all 0.7s ease-in-out 0.3s;
+}
+
+.buttons button#next {
+  position: absolute;
+  top: 60%;
+  right: 15px;
+}
+
+.buttons button#prev {
+  position: absolute;
+  top: 60%;
+  left: 15px;
+}
+
+.buttons button {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+@media (max-width: 500px) {
+  .slide .content {
+    bottom: -300px;
+    left: 0;
+    width: 100%;
+  }
+
+  .slide.current .content {
+    transform: translateY(-300px);
+  }
+}
+
+/* Backgorund Images */
+.slide:first-child {
+  background: url(../images/slider_img3.jpg) no-repeat center top/cover;
+}
+.slide:nth-child(2) {
+  background: url(../images/slider_img4.jpg) no-repeat center top/cover;
+}
+.slide:nth-child(3) {
+  background: url(../images/slider_img2.jpg) no-repeat center top/cover;
+}
+.slide:nth-child(4) {
+  background: url(../images/slider_img5.jpg) no-repeat center top/cover;
+}
+.slide:nth-child(5) {
+  background: url(../images/slider_img1.jpg) no-repeat center top/cover;
+}
+//END SLIDER
